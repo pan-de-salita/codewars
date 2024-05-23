@@ -23,9 +23,22 @@
 # end
 
 # iter 2
-def high_and_low(numbers)
-  numbers_arr = numbers.split(' ').map(&:to_i)
-  highest = numbers_arr.max
-  lowest = numbers_arr.min
-  "#{highest} #{lowest}"
+# def high_and_low(numbers)
+#   numbers_arr = numbers.split(' ').map(&:to_i)
+#   highest = numbers_arr.max
+#   lowest = numbers_arr.min
+#   "#{highest} #{lowest}"
+# end
+
+# iter if number were an array
+def high_and_low(num_arr)
+  highest = num_arr[0]
+  lowest = num_arr[0]
+
+  num_arr.each do |num|
+    highest = num > highest ? num : highest
+    lowest = num < lowest ? num : lowest
+  end
+
+  [highest, lowest]
 end

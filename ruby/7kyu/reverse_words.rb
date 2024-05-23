@@ -35,6 +35,7 @@
 # end
 
 # improved naming via phind
+# @param [String]
 def reverse_words(str)
   word_boundaries = build_boundaries(str)
   reversed_words_parts = build_reversed_words_parts(str)
@@ -76,5 +77,5 @@ end
 # [^ ] is a negated character class that matches any character except a space.
 # By using [^ ]+, we match one or more consecutive characters that are not spaces.
 # def reverse_words(str)
-#   str.gsub(/([^ ]+)/, &:reverse)
+#   str.gsub(/\S+/, &:reverse)
 # end
